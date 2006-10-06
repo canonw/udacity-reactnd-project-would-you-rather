@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import QuestionToVote from "./QuestionToVote";
 import QuestionToView from "./QuestionToView";
+import PageNotFound from "./PageNotFound";
 
 class Question extends Component {
   state = {
@@ -11,6 +12,11 @@ class Question extends Component {
 
   render() {
     const { authedUser, qid, user, author, question } = this.props;
+
+    if (!question) {
+      return <PageNotFound />;
+    }
+
     const didAnswered = Object.keys(user.answers).includes(qid);
 
     return (
@@ -41,7 +47,8 @@ const mapStateToProps = ({ authedUser, questions, users }, ownProps) => {
   const { qid } = ownProps.match.params;
   const question = questions[qid];
   const user = users[authedUser];
-  const questionAuthor = users[question.author] ?? null;
+  const questionAuthor =
+    users && question ? users[question.author] : null ?? null;
 
   return {
     authedUser: authedUser,
