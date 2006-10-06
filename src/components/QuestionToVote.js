@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Grid, Segment, Form, Button, Radio, Item } from "semantic-ui-react";
-import { handleReplyQuestion } from "../actions/questions";
+import { handleReplyQuestion } from "../actions/shared";
 
 // The value must match question object property name.
 const VOTE_OPTION_ONE = "optionOne";
