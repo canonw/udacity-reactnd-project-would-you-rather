@@ -57,9 +57,6 @@ class QuestionToVote extends Component {
                   <Item.Description>
                     <Form>
                       <Form.Field>
-                        Selected value: <b>{this.state.value}</b>
-                      </Form.Field>
-                      <Form.Field>
                         <Radio
                           label={question.optionOne.text}
                           name="radioGroup"

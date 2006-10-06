@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
 import QuestionToVote from "./QuestionToVote";
+import QuestionToView from "./QuestionToView";
 
 class Question extends Component {
   state = {
@@ -15,7 +16,13 @@ class Question extends Component {
     return (
       <Fragment>
         {didAnswered ? (
-          <div>View Ansewered</div>
+          <QuestionToView
+            authedUser={authedUser}
+            qid={qid}
+            user={user}
+            author={author}
+            question={question}
+          />
         ) : (
           <QuestionToVote
             authedUser={authedUser}
