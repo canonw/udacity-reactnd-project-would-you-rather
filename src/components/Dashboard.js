@@ -6,6 +6,7 @@ import LoadingBar from "react-redux-loading-bar";
 
 import NavBar from "./NavBar";
 import Home from "./Home";
+import Question from "./Question";
 import PageNotFound from "./PageNotFound";
 
 class Dashboard extends Component {
@@ -19,6 +20,7 @@ class Dashboard extends Component {
             <div className="ui center container">
               <Switch>
                 <Route path="/" exact component={Home} />
+                <Route path="/questions/:qid" component={Question} />
                 <Route render={() => <PageNotFound />} />
               </Switch>
             </div>
