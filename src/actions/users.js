@@ -1,5 +1,6 @@
 export const RECEIVED_USERS = "RECEIVED_USERS";
 export const USER_REPLY_QUESTION = "USER_REPLY_QUESTION";
+export const USER_CREATED_QUESTION = "USER_CREATED_QUESTION";
 
 export function receiveUsers(users) {
   return {
@@ -14,5 +15,12 @@ export function userReplyQuestion({ authedUser, qid, answer }) {
     authedUser,
     qid,
     answer,
+  };
+}
+
+export function userCreateQuestion(question) {
+  return {
+    type: USER_CREATED_QUESTION,
+    question,
   };
 }
