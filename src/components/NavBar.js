@@ -9,7 +9,7 @@ class NavBar extends Component {
     const { userName, avatarURL } = this.props;
 
     return (
-      <div className="ui fixed inverted menu">
+      <div className="ui inverted menu">
         <div className="ui container">
           <div className="item" />
           <NavLink

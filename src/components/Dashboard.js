@@ -10,12 +10,8 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="ui container">
-        <LoadingBar />
         <NavBar />
-        <div className="ui centered container grid">
-          <div className="row"></div>
-          <div className="row"></div>
-        </div>
+        <LoadingBar />
         <div className="ui center container">
           <Home />
         </div>
