@@ -22,7 +22,7 @@ class NavBar extends Component {
             &nbsp; Home
           </NavLink>
           <NavLink
-            to="/newpoll"
+            to="/addquestion"
             exact
             className="item"
             activeClassName="active"

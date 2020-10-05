@@ -2,9 +2,9 @@ import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
-import LoadingBar from "react-redux-loading-bar";
-import Dashboard from "./Dashboard";
+import { handleLoginUser } from "../actions/shared";
 
+import Dashboard from "./Dashboard";
 import Login from "./Login";
 
 class App extends Component {
@@ -18,10 +18,7 @@ class App extends Component {
 
     return (
       <Router>
-        <Fragment>
-          <LoadingBar />
-          {isAuthenticated ? <Dashboard /> : <Login />}
-        </Fragment>
+        <Fragment>{isAuthenticated ? <Dashboard /> : <Login />}</Fragment>
       </Router>
     );
   }

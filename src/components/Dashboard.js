@@ -1,13 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import LoadingBar from "react-redux-loading-bar";
+
 import NavBar from "./NavBar";
+import Home from "./Home";
 
 class Dashboard extends Component {
   render() {
     return (
-      <div>
+      <div className="ui container">
+        <LoadingBar />
         <NavBar />
+        <div className="ui centered container grid">
+          <div className="row"></div>
+          <div className="row"></div>
+        </div>
+        <div className="ui center container">
+          <Home />
+        </div>
       </div>
     );
   }
