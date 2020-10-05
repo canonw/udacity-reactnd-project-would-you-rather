@@ -23,7 +23,6 @@ class App extends Component {
 }
 
 App.propTypes = {
-  handleInitialData: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
 };
 
