@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
-import { handleLoginUser } from "../actions/shared";
 
 import Dashboard from "./Dashboard";
 import Login from "./Login";
