@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading-bar";
+import Dashboard from "./Dashboard";
 
 import Login from "./Login";
 
@@ -19,7 +20,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
-          {isAuthenticated ? <div>App</div> : <Login />}
+          {isAuthenticated ? <Dashboard /> : <Login />}
         </Fragment>
       </Router>
     );
