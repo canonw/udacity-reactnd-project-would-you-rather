@@ -1,6 +1,7 @@
 import { getInitialData } from "../utils/api";
-import { receiveUsers } from "../actions/users";
-import { receiveQuestions } from "../actions/questions";
+import { setAuthedUser } from "./authedUsers";
+import { receiveUsers } from "./users";
+import { receiveQuestions } from "./questions";
 import { showLoading, hideLoading } from "react-redux-loading-bar";
 
 export function handleInitialData() {
@@ -11,5 +12,13 @@ export function handleInitialData() {
       dispatch(receiveQuestions(questions));
       dispatch(hideLoading());
     });
+  };
+}
+
+export function handleLoginUser(id) {
+  return (dispatch) => {
+    dispatch(showLoading());
+    dispatch(setAuthedUser(id));
+    dispatch(hideLoading());
   };
 }
