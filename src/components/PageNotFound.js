@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const PageNotFound = ({ history }) => (
+const PageNotFound = () => (
   <div className="ui container">
     <div className="ui two column centered grid">
       <div className="row"></div>
@@ -27,11 +27,5 @@ const PageNotFound = ({ history }) => (
     </div>
   </div>
 );
-
-PageNotFound.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-};
 
 export default PageNotFound;

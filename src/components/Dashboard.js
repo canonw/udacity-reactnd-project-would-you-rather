@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
 import LoadingBar from "react-redux-loading-bar";
@@ -17,8 +17,10 @@ class Dashboard extends Component {
           <LoadingBar />
           {this.props.isAuthenticated !== true ? null : (
             <div className="ui center container">
-              <Route path="/" exact component={Home} />
-              <Route render={() => <PageNotFound />} />
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route render={() => <PageNotFound />} />
+              </Switch>
             </div>
           )}
         </div>
