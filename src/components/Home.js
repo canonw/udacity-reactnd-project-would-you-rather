@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { Tab, Button, Card, Image } from "semantic-ui-react";
 
@@ -29,7 +30,9 @@ const renderCardsForUnansweredQuestions = (
           </Card.Content>
           <Card.Content extra>
             <div className="ui one buttons">
-              <Button floated="right">Answer</Button>
+              <Link to={`/questions/${qid}`}>
+                <Button fluid>Answer</Button>
+              </Link>
             </div>
           </Card.Content>
         </Card>
@@ -60,7 +63,9 @@ const renderCardsForAnsweredQuestions = (answeredQids, users, questions) => {
           </Card.Content>
           <Card.Content extra>
             <div className="ui one buttons">
-              <Button floated="right">View Poll</Button>
+              <Link to={`/questions/${qid}`}>
+                <Button fluid>View Poll</Button>
+              </Link>
             </div>
           </Card.Content>
         </Card>
