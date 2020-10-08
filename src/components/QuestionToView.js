@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Segment, Progress, Item } from "semantic-ui-react";
-import { BiDislike, BiLike } from "react-icons/bi";
+import { Grid, Segment, Progress, Item, Label } from "semantic-ui-react";
+import { BiLike } from "react-icons/bi";
 
 import { calculatePercent } from "../utils/helper.js";
 
@@ -24,15 +24,12 @@ export default function QuestionToView(props) {
                 <Item.Meta>Would You Rather...</Item.Meta>
                 <Item.Description>
                   <Segment>
-                    <div>
-                      {selectedOption === "optionOne" ? (
-                        <BiLike />
-                      ) : (
-                        <BiDislike />
-                      )}
-                      &nbsp;
-                      {question.optionOne.text}
-                    </div>
+                    {selectedOption === "optionOne" && (
+                      <Label color="teal" ribbon="right">
+                        Your Vote
+                      </Label>
+                    )}
+                    {question.optionOne.text}
                     <Progress
                       percent={calculatePercent(optionOneCount, totalCount)}
                       progress
@@ -44,15 +41,12 @@ export default function QuestionToView(props) {
                 </Item.Description>
                 <Item.Description>
                   <Segment>
-                    <div>
-                      {selectedOption === "optionTwo" ? (
-                        <BiLike />
-                      ) : (
-                        <BiDislike />
-                      )}
-                      &nbsp;
-                      {question.optionTwo.text}
-                    </div>
+                    {selectedOption === "optionTwo" && (
+                      <Label color="teal" ribbon="right">
+                        Your Vote
+                      </Label>
+                    )}
+                    {question.optionTwo.text}
                     <Progress
                       percent={calculatePercent(optionTwoCount, totalCount)}
                       progress

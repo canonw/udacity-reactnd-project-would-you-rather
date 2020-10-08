@@ -23,7 +23,7 @@ class Dashboard extends Component {
             <div className="ui center container">
               <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/newquestion" exact component={NewQuestion} />
+                <Route path="/add" exact component={NewQuestion} />
                 <Route path="/questions/:qid" component={Question} />
                 <Route path="/leaderboard" component={LeaderBoard} />
                 <Route path="/logout" component={Logout} />

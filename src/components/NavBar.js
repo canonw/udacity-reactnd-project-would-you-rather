@@ -21,12 +21,7 @@ class NavBar extends Component {
             <BiHome />
             &nbsp; Home
           </NavLink>
-          <NavLink
-            to="/newquestion"
-            exact
-            className="item"
-            activeClassName="active"
-          >
+          <NavLink to="/add" exact className="item" activeClassName="active">
             <BiQuestionMark />
             &nbsp; New Question
           </NavLink>
