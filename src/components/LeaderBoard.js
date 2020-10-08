@@ -38,7 +38,7 @@ const LeaderBoard = (props) => {
                   </Menu.Item>
                   <Menu.Item as="a">
                     Created
-                    <Label floating>{score.questionAnswered}</Label>
+                    <Label floating>{score.questionCreated}</Label>
                   </Menu.Item>
                 </Menu>
               </Grid.Column>
