@@ -9,6 +9,7 @@ import Home from "./Home";
 import Question from "./Question";
 import NewQuestion from "./NewQuestion";
 import PageNotFound from "./PageNotFound";
+import LeaderBoard from "./LeaderBoard";
 
 class Dashboard extends Component {
   render() {
@@ -23,6 +24,7 @@ class Dashboard extends Component {
                 <Route path="/" exact component={Home} />
                 <Route path="/newquestion" exact component={NewQuestion} />
                 <Route path="/questions/:qid" component={Question} />
+                <Route path="/leaderboard" component={LeaderBoard} />
                 <Route render={() => <PageNotFound />} />
               </Switch>
             </div>
