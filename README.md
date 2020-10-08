@@ -6,11 +6,11 @@ This is the final code implement Udacity React Nanodegree Program 2nd project Wo
 
 In the project directory, run the following command to install dependencies.
 
-### `yarn install`
+### `npm install`
 
 To start the application, run the following command.
 
-### `yarn start`
+### `npm start`
 
 The app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
