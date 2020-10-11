@@ -9,28 +9,32 @@ const renderCardsForUnansweredQuestions = (
   users,
   questions
 ) => {
+  const sorted = unansweredQids
+    .map((key) => questions[key])
+    .sort((a, b) => b.timestamp - a.timestamp);
+
   return (
     <Card.Group className="centered">
-      {unansweredQids.map((qid) => (
-        <Card key={qid}>
+      {sorted.map((question) => (
+        <Card key={question.id}>
           <Card.Content>
             <Image
               floated="left"
               size="mini"
-              src={users[questions[qid].author].avatarURL}
+              src={users[question.author].avatarURL}
             />
-            <Card.Header>{users[questions[qid].author].name} asks</Card.Header>
+            <Card.Header>{users[question.author].name} asks</Card.Header>
             <Card.Header>would you rather...</Card.Header>
             <Card.Description>
               <ul>
-                <li>{questions[qid].optionOne.text}</li>
-                <li>{questions[qid].optionTwo.text}</li>
+                <li>{question.optionOne.text}</li>
+                <li>{question.optionTwo.text}</li>
               </ul>
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
             <div className="ui one buttons">
-              <Link to={`/questions/${qid}`}>
+              <Link to={`/questions/${question.id}`}>
                 <Button fluid>Answer</Button>
               </Link>
             </div>
@@ -42,28 +46,32 @@ const renderCardsForUnansweredQuestions = (
 };
 
 const renderCardsForAnsweredQuestions = (answeredQids, users, questions) => {
+  const sorted = answeredQids
+    .map((key) => questions[key])
+    .sort((a, b) => b.timestamp - a.timestamp);
+
   return (
     <Card.Group className="centered">
-      {answeredQids.map((qid) => (
-        <Card key={qid}>
+      {sorted.map((question) => (
+        <Card key={question.id}>
           <Card.Content>
             <Image
               floated="left"
               size="mini"
-              src={users[questions[qid].author].avatarURL}
+              src={users[question.author].avatarURL}
             />
-            <Card.Header>{users[questions[qid].author].name} asks</Card.Header>
+            <Card.Header>{users[question.author].name} asks</Card.Header>
             <Card.Header>would you rather...</Card.Header>
             <Card.Description>
               <ul>
-                <li>{questions[qid].optionOne.text}</li>
-                <li>{questions[qid].optionTwo.text}</li>
+                <li>{question.optionOne.text}</li>
+                <li>{question.optionTwo.text}</li>
               </ul>
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
             <div className="ui one buttons">
-              <Link to={`/questions/${qid}`}>
+              <Link to={`/questions/${question.id}`}>
                 <Button fluid>View Poll</Button>
               </Link>
             </div>
